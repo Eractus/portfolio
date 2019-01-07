@@ -1,0 +1,100 @@
+body {
+  margin: 0;
+  font-size: 18px;
+  color: #fff;
+  font-family: 'Balthazar', serif;
+}
+
+h1, h2, h3, p {
+  font-weight: normal;
+  margin-top: 2%;
+  margin-bottom: 2%;
+}
+
+header {
+  background-image: url("../assets/portfolio.jpg");
+  background-attachment: fixed;
+  height: 100vh;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 10%;
+  text-shadow: 2px 2px 4px #000000;
+}
+
+header h1 {
+  font-size: 45px;
+}
+
+header h2 {
+  font-size: 32px;
+  line-height: 180%;
+}
+
+header h3 {
+  margin-top: 5%;
+  color: gold;
+}
+
+header > h1:first-child {
+  font-size: 55px;
+}
+
+header > img {
+  height: 250px;
+  border-radius: 50%;
+}
+
+.header-intro-text {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.header-intro-text > h1:last-child {
+  color: red;
+  margin-left: 12px;
+  border-right: .15em solid red;
+  animation: cursor .5s step-end infinite;
+}
+
+@keyframes cursor {
+  from, to { border-color: transparent }
+  50% { border-color: red }
+}
+
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  border-bottom: 3px solid gold;
+}
+
+.navbar > a {
+  margin: 15px 25px;
+  font-size: 22px;
+}
+
+section {
+  padding: 5%;
+  background-color: #35320c;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border-top: 1px solid gold;
+}
+
+footer {
+  background-color: #181818;
+  padding: 5%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
