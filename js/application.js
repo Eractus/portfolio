@@ -50,3 +50,13 @@ TypeWrite.prototype.tick = function() {
     that.tick();
   }, delta);
 };
+
+// navbar links
+function clickHome() {
+  document.documentElement.scrollTop = 0;
+}
+
+function clickProjects() {
+  let projectSection = document.getElementById("projects");
+  document.documentElement.scrollTop = projectSection.offsetTop;
+}
