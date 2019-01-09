@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="./css/style.css" type="text/css">
     <link href="https://fonts.googleapis.com/css?family=Balthazar" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Danny Peng's Portfolio</title>
   </head>
   <body>
     <header>
-      <img src="./assets/headshot.jpg">
       <h1>Hello! My name is Danny Peng.</h1>
-      <h2>I am a software developer passionate about creating amazing products that make a real impact. And in the current era where content is consumed across all sorts of devices, I enjoy the challenge of ensuring the content is always rendered beautifully.</h2>
       <div class="header-intro-text">
-        <h1>I am skilled in</h1>
+        <h1>I am a software developer skilled in</h1>
         <h1
           id="typewrite"
           data-period="2000"
@@ -20,15 +19,25 @@
           <span class="wrap"></span>
         </h1>
       </div>
-      <h3>Scroll down</h3>
+      <div class="header-footer-text">
+        <h3>Learn more about Me</h3>
+        <i class="fa fa-angle-double-down"></i>
+      </div>
     </header>
     <nav class="navbar">
       <a onClick="clickHome()">Home</a>
+      <a onClick="clickAbout()">About</a>
       <a onClick="clickProjects()">Projects</a>
-      <a>Skills</a>
+      <a onClick="clickSkills()">Skills</a>
       <a>Contact</a>
     </nav>
     <main>
+      <section id="aboutme" class="about-me">
+        <h2>About Me</h2>
+        <img class="headshot" src="./assets/headshot.jpg">
+        <p>I am a software developer passionate about creating amazing products that make a real impact. And in the current era where content is consumed across all sorts of devices, I enjoy the challenge of ensuring the content is always rendered beautifully.</p>
+        <p>When I'm not coding, you can find me playing non-competitive games, tennis, and hiking.</p>
+      </section>
       <section id="projects" class="projects">
         <h2>My Projects</h2>
         <div class="projects-container">
@@ -41,56 +50,57 @@
           </div>
           <div class="project-container">
             <h4>Tap Tap Revolution</h4>
-            <img src="ttr.gif">
-            <div>
-              <a>See Project</a>
-              <a>See the Code</a>
-            </div>
+            <img src="./assets/ttr.gif">
+            <p>A web game app inspired by the classic Dance Dance Revolution, played using the direction keys. Built using HTML5 Canvas and vanilla JavaScript. Players have several options to customize their playing experience: mute/unmute, pause/unpause, and restart. The game will progressively pick up in difficulty and the higher your combo/streak, the higher your score increases per successful tap.</p>
+            <a class="project-button" href="https://eractus.github.io/tapTapRevolution/">See Project</a>
+            <a class="project-button" href="https://github.com/Eractus/tapTapRevolution">See the Code</a>
           </div>
           <div class="project-container">
             <h4>OverMatch</h4>
-            <img src="overmatch.gif">
-            <div>
-              <a>See Project</a>
-              <a>See the Code</a>
-            </div>
+            <img src="./assets/overmatch.gif">
+            <p>A full stack project built on the popular MERN (MongoDB, Express, React, Node) stack and features OAuth 2.0 to delegate authentication to Battle.net. Users login securely using their existing credentials, and algorithms extract information during login to use in other API calls to collect data to help create their dream team with fellow players.</p>
+            <a class="project-button" href="https://aa-overmatch.herokuapp.com/">See Project</a>
+            <a class="project-button" href="https://github.com/walterhwan/overmatch">See the Code</a>
           </div>
         </div>
       </section>
-      <section class="skills">
+      <section id="skills" class="skills">
         <h2>My Skills</h2>
-        <div>
-          <img src="./assets/ruby.png">
+        <div class="skills-container">
+          <img src="./assets/html5.png">
+          <img src="./assets/css3.png">
           <img src="./assets/js.png">
+          <img src="./assets/ruby.png">
           <img src="./assets/react.png">
           <img src="./assets/redux.png">
           <img src="./assets/rails.png">
-          <img src="./assets/capybara.png">
-          <img src="./assets/node.png">
+          <img src="./assets/node.svg">
           <img src="./assets/express.png">
+          <img src="./assets/webpack.png">
           <img src="./assets/postg.png">
           <img src="./assets/mongo.png">
-          <img src="./assets/nosql.png">
-          <img src="./assets/html5.png">
-          <img src="./assets/css3.png">
         </div>
       </section>
       <section class="contact">
         <h2>Contact me</h2>
-        <form>
+        <p>I'd love to hear from you!</p>
+        <form class="contact-form" onSubmit="this.handleSubmit()">
           <input
+            class="contact-form-input"
             type="text"
             placeholder="Your Name"
           >
           <input
+            class="contact-form-input"
             type="email"
             placeholder="Your Email"
           >
           <textarea
+            class="contact-form-input message"
             type="text"
             placeholder="Your Message"
           ></textarea>
-          <input type="submit" value="Send Message">
+          <input type="submit" value="Send Message" class="contact-form-button">
         </form>
       </section>
     </main>

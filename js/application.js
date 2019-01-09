@@ -56,7 +56,17 @@ function clickHome() {
   document.documentElement.scrollTop = 0;
 }
 
+function clickAbout() {
+  let section = document.getElementById("aboutme");
+  document.documentElement.scrollTop = section.offsetTop;
+}
+
 function clickProjects() {
-  let projectSection = document.getElementById("projects");
-  document.documentElement.scrollTop = projectSection.offsetTop;
+  let section = document.getElementById("projects");
+  document.documentElement.scrollTop = section.offsetTop;
+}
+
+function clickSkills() {
+  let section = document.getElementById("skills");
+  document.documentElement.scrollTop = section.offsetTop;
 }

@@ -16,6 +16,7 @@ h1, h2, h3, p {
 }
 
 header {
+  position: relative;
   background-image: url("../assets/portfolio.jpg");
   background-attachment: fixed;
   height: 100vh;
@@ -38,16 +39,11 @@ header h2 {
   line-height: 180%;
 }
 
-header h3 {
-  margin-top: 5%;
-  color: gold;
-}
-
 header > h1:first-child {
   font-size: 55px;
 }
 
-header > img {
+.headshot {
   height: 250px;
   border-radius: 50%;
 }
@@ -55,6 +51,7 @@ header > img {
 .header-intro-text {
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
 }
 
 .header-intro-text > h1:last-child {
@@ -62,6 +59,16 @@ header > img {
   margin-left: 12px;
   border-right: .15em solid red;
   animation: cursor .5s step-end infinite;
+}
+
+.header-footer-text {
+  position: absolute;
+  bottom: 50px;
+  color: gold;
+}
+
+.header-footer-text > i {
+  font-size: 25px;
 }
 
 @keyframes cursor {
@@ -80,7 +87,7 @@ header > img {
 }
 
 .navbar > a {
-  margin: 15px 25px;
+  margin: 1% 2%;
   font-size: 22px;
   cursor: pointer;
 }
@@ -104,21 +111,34 @@ section h2 {
   border-bottom: 3px solid #000;
 }
 
+.about-me {
+  padding: 3% 15%;
+}
+
+.about-me p {
+  color: #616161;
+  font-size: 26px;
+  line-height: 150%;
+}
+
+.about-me p:last-child {
+  margin-top: 10px;
+}
+
 .projects {
   background-color: #f8f8f8;
-
+  padding: 3% 5%;
 }
 
 .projects-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: center;
 }
 
 .project-container {
-  margin: 2% 5%;
-  width: 450px;
+  margin: 2% 6%;
+  max-width: 450px;
 }
 
 .project-container h4 {
@@ -131,6 +151,11 @@ section h2 {
   line-height: 150%;
   color: #616161;
   margin-bottom: 20px;
+}
+
+.project-container img {
+  width: 320px;
+  height: 162px;
 }
 
 .project-button {
@@ -151,10 +176,82 @@ section h2 {
 
 .skills {
   background-color: #fff;
+  padding: 3% 2%;
+}
+
+.skills-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.skills-container img {
+  width: 12vw;
+  height: 15%;
+  margin: 10px;
 }
 
 .contact {
   background-color: #f8f8f8;
+}
+
+.contact > p {
+  color: #616161;
+  font-size: 26px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  font-size: 22px;
+}
+
+.contact-form-input {
+  font-family: 'Balthazar', serif;
+  color: white;
+  font-weight: 200;
+  padding: 2%;
+  font-size: 22px;
+  background-color: #282828;
+  margin-bottom: 1%;
+}
+
+.contact-form-input::placeholder {
+  color: #B8B8B8;
+  font-weight: 200;
+}
+
+.contact-form-input:focus {
+  border-color: #4a7a42;
+}
+
+.message {
+  resize: none;
+  min-height: 180px;
+}
+
+.contact-form > p {
+  margin-top: 0;
+  font-size: 16px;
+  color: red;
+}
+
+.contact-form-button {
+  font-family: 'Balthazar', serif;
+  width: 150px;
+  font-size: 18px;
+  color: #fff;
+  padding: 2% 3%;
+  border-radius: 3px;
+  background-color: #4a7a42;
+  border: 1px solid #4a7a42;
+  cursor: pointer;
+}
+
+.contact-form-button:hover {
+  background-color: #fff;
+  color: #4a7a42;
 }
 
 footer {
