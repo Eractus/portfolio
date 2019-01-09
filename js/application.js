@@ -70,3 +70,47 @@ function clickSkills() {
   let section = document.getElementById("skills");
   document.documentElement.scrollTop = section.offsetTop;
 }
+
+function clickContact() {
+  let section = document.getElementById("contact");
+  document.documentElement.scrollTop = section.offsetTop;
+}
+
+let contactName = document.getElementById("name");
+let contactEmail = document.getElementById("email");
+let contactMessage = document.getElementById("message");
+let contactErrors = document.getElementById("errors");
+
+function handleSubmit(e) {
+  e.preventDefault();
+
+  const templateID = "reply_to_form_submission";
+
+  if (contactName === '') {
+    contactErrors.innerHTML = 'Your Name cannot be empty';
+  } else if (contactEmail === '') {
+    contactErrors.innerHTML = 'Your Email cannot be empty';
+  } else if (contactMessage === '') {
+    contactErrors.innerHTML = 'Your Message cannot be empty';
+  } else {
+    sendFeedback(
+      templateID,
+      contactName,
+      contactEmail,
+      contactMessage
+    );
+  }
+}
+
+function sendFeedback(templateId, senderName, senderEmail, senderMessage) {
+  window.emailjs
+    .send('portfolio_mailgun', templateId, {
+      senderName,
+      senderEmail,
+      senderMessage
+    })
+    .then(res => {
+      contactErrors.innerHTML = 'Message sent, thanks!';
+    })
+    .catch(err => console.error('Failed to send message. Error: ', err));
+}

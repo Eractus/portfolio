@@ -6,6 +6,12 @@
     <link href="https://fonts.googleapis.com/css?family=Balthazar" rel="stylesheet">
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <title>Danny Peng's Portfolio</title>
+    <script type="text/javascript" src="https://cdn.emailjs.com/sdk/2.2.4/email.min.js"></script>
+    <script type="text/javascript">
+       (function(){
+          emailjs.init("user_O7bTOHBFXLiubb8INpSZd");
+       })();
+    </script>
   </head>
   <body>
     <header>
@@ -29,7 +35,7 @@
       <a onClick="clickAbout()">About</a>
       <a onClick="clickProjects()">Projects</a>
       <a onClick="clickSkills()">Skills</a>
-      <a>Contact</a>
+      <a onClick="clickContact()">Contact</a>
     </nav>
     <main>
       <section id="aboutme" class="about-me">
@@ -81,49 +87,53 @@
           <img src="./assets/mongo.png">
         </div>
       </section>
-      <section class="contact">
+      <section id="contact" class="contact">
         <h2>Contact me</h2>
         <p>I'd love to hear from you!</p>
         <form class="contact-form" onSubmit="this.handleSubmit()">
           <input
+            id="name"
             class="contact-form-input"
             type="text"
             placeholder="Your Name"
           >
           <input
+            id="email"
             class="contact-form-input"
             type="email"
             placeholder="Your Email"
           >
           <textarea
+            id="message"
             class="contact-form-input message"
             type="text"
             placeholder="Your Message"
           ></textarea>
           <input type="submit" value="Send Message" class="contact-form-button">
+          <div id="errors"></div>
         </form>
       </section>
     </main>
     <footer>
       <div class="resume">
         <p>My Resume:</p>
-        <a>
+        <a href="https://docs.google.com/document/d/1l5WaakKAhnnShE2brLkVTiL3Mp9HL1hBGrfUWBP6bIQ/edit?usp=sharing">
           <img src="./assets/docx.png">
         </a>
-        <a>
+        <a href="https://github.com/Eractus/portfolio/blob/master/assets/resume.pdf">
           <img src="./assets/pdf.png">
         </a>
         <a></a>
       </div>
       <div class="social">
         <p>Find me on:</p>
-        <a>
+        <a href="https://www.facebook.com/danny.w.peng">
           <img src="./assets/facebook.png">
         </a>
-        <a>
+        <a href="https://github.com/Eractus">
           <img src="./assets/github.png">
         </a>
-        <a>
+        <a href="https://www.linkedin.com/in/danny-peng/">
           <img src="./assets/linkedin.png">
         </a>
       </div>
