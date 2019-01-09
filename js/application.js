@@ -1,3 +1,7 @@
+window.onbeforeunload = function () {
+  window.scrollTo(0, 0);
+};
+
 // typing and deleting skills effect
 window.onload = function() {
   var el = document.getElementById('typewrite');
