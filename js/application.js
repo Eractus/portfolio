@@ -80,29 +80,23 @@ function clickContact() {
   document.documentElement.scrollTop = section.offsetTop;
 }
 
-let contactName = document.getElementById("name");
-let contactEmail = document.getElementById("email");
-let contactMessage = document.getElementById("message");
-let contactErrors = document.getElementById("errors");
+let contactResponse = document.getElementById("response");
 
-function handleSubmit(e) {
-  e.preventDefault();
+function handleSubmit() {
+  let contactName = document.getElementById("name").value;
+  let contactEmail = document.getElementById("email").value;
+  let contactMessage = document.getElementById("message").value;
 
-  const templateID = "reply_to_form_submission";
+  const templateID = "portfolio_contact_form";
 
   if (contactName === '') {
-    contactErrors.innerHTML = 'Your Name cannot be empty';
+    contactResponse.innerHTML = 'Your Name cannot be empty';
   } else if (contactEmail === '') {
-    contactErrors.innerHTML = 'Your Email cannot be empty';
+    contactResponse.innerHTML = 'Your Email cannot be empty';
   } else if (contactMessage === '') {
-    contactErrors.innerHTML = 'Your Message cannot be empty';
+    contactResponse.innerHTML = 'Your Message cannot be empty';
   } else {
-    sendFeedback(
-      templateID,
-      contactName,
-      contactEmail,
-      contactMessage
-    );
+    sendFeedback(templateID, contactName, contactEmail, contactMessage);
   }
 }
 
@@ -114,7 +108,8 @@ function sendFeedback(templateId, senderName, senderEmail, senderMessage) {
       senderMessage
     })
     .then(res => {
-      contactErrors.innerHTML = 'Message sent, thanks!';
+      contactResponse.className = "contact-form-success";
+      contactResponse.innerHTML = 'Message sent, thanks!';
     })
     .catch(err => console.error('Failed to send message. Error: ', err));
 }

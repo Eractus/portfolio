@@ -90,7 +90,7 @@
       <section id="contact" class="contact">
         <h2>Contact Me</h2>
         <p>I'd love to hear from you!</p>
-        <form class="contact-form" onSubmit="this.handleSubmit()">
+        <form class="contact-form" onSubmit="event.preventDefault(); handleSubmit();">
           <input
             id="name"
             class="contact-form-input"
@@ -109,8 +109,8 @@
             type="text"
             placeholder="Your Message"
           ></textarea>
+          <div id="response" class="contact-form-response"></div>
           <input type="submit" value="Send Message" class="contact-form-button">
-          <div id="errors"></div>
         </form>
       </section>
     </main>
