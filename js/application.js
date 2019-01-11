@@ -83,6 +83,7 @@ function clickContact() {
 let contactResponse = document.getElementById("response");
 
 function handleSubmit() {
+  event.preventDefault();
   let contactName = document.getElementById("name").value;
   let contactEmail = document.getElementById("email").value;
   let contactMessage = document.getElementById("message").value;
