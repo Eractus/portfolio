@@ -102,6 +102,9 @@ function handleSubmit() {
 }
 
 function sendFeedback(templateId, senderName, senderEmail, senderMessage) {
+  let contactName = document.getElementById("name");
+  let contactEmail = document.getElementById("email");
+  let contactMessage = document.getElementById("message");
   window.emailjs
     .send('portfolio_mailgun', templateId, {
       senderName,
@@ -111,6 +114,9 @@ function sendFeedback(templateId, senderName, senderEmail, senderMessage) {
     .then(res => {
       contactResponse.className = "contact-form-success";
       contactResponse.innerHTML = 'Message sent, thanks!';
+      contactName.value = '';
+      contactEmail.value = '';
+      contactMessage.value = '';
     })
     .catch(err => console.error('Failed to send message. Error: ', err));
 }
