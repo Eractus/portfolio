@@ -61,10 +61,32 @@ header > h1:first-child {
   animation: cursor .5s step-end infinite;
 }
 
+.header-social-media {
+  display: flex;
+}
+
+.header-social-media img {
+  border: 2px solid #fff;
+  border-radius: 5px;
+  margin: 15px;
+  padding: 3px;
+  width: 40px;
+  height: 40px;
+}
+
+.header-social-media img:hover {
+  opacity: 0.7;
+}
+
 .header-footer-text {
   position: absolute;
   bottom: 50px;
-  color: gold;
+  color: #FFD700;
+  cursor: pointer;
+}
+
+.header-footer-text:hover {
+  color: #DAA520;
 }
 
 .header-footer-text > i {
@@ -273,6 +295,18 @@ footer {
   display: flex;
   justify-content: space-around;
   align-items: center;
+  position: relative;
+}
+
+.footer-back-to-top {
+  position: absolute;
+  font-size: 25px;
+  top: 0;
+  right: 100px;
+  padding: 10px;
+  padding-top: 25px;
+  background-color: #42aa3e;
+  cursor: pointer;
 }
 
 footer a {
