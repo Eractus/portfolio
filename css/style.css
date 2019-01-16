@@ -61,6 +61,11 @@ header > h1:first-child {
   animation: cursor .5s step-end infinite;
 }
 
+@keyframes cursor {
+  from, to { border-color: transparent }
+  50% { border-color: red }
+}
+
 .header-social-media {
   display: flex;
 }
@@ -91,11 +96,6 @@ header > h1:first-child {
 
 .header-footer-text > i {
   font-size: 25px;
-}
-
-@keyframes cursor {
-  from, to { border-color: transparent }
-  50% { border-color: red }
 }
 
 .navbar {
