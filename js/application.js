@@ -1,4 +1,17 @@
-// typing and deleting skills effect
+// script for revealing/hiding docx and pdf resumes when clicking and moving away from the document icon
+let docs = document.getElementById('document');
+let resumes = document.getElementById('resumes');
+
+function showResumes() {
+  resumes.style.display = "block";
+  docs.style.display = "none";
+}
+function hideResumes() {
+  resumes.style.display = "none";
+  docs.style.display = "block";
+}
+
+// script for typing and deleting skills effect in the header
 window.onload = function() {
   var el = document.getElementById('typewrite');
   var cyclingSkills = el.getAttribute('data-type');
@@ -51,7 +64,7 @@ TypeWrite.prototype.tick = function() {
   }, delta);
 };
 
-// navbar links
+// navbar links redirecting to the appropriate section of the page
 function clickHome() {
   document.documentElement.scrollTop = 0;
 }
@@ -76,6 +89,7 @@ function clickContact() {
   document.documentElement.scrollTop = section.offsetTop;
 }
 
+// script allowing users to submit their name, email, amd message - i will receive an email at my address, and they will receive an email from my address
 let contactResponse = document.getElementById("response");
 
 function handleSubmit() {

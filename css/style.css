@@ -15,6 +15,10 @@ h1, h2, h3, p {
   margin-bottom: 2%;
 }
 
+a {
+  text-decoration: none;
+}
+
 header {
   position: relative;
   background-image: url("../assets/portfolio.jpg");
@@ -81,6 +85,18 @@ header > h1:first-child {
 
 .header-social-media img:hover {
   opacity: 0.7;
+}
+
+.header-resumes {
+  display: flex;
+}
+
+.header-resumes > img {
+  cursor: pointer;
+}
+
+.header-resumes > span {
+  display: none;
 }
 
 .header-footer-text {
@@ -309,9 +325,9 @@ footer {
   cursor: pointer;
 }
 
-footer a {
+/* footer a {
   text-decoration: none;
-}
+} */
 
 footer p {
   font-size: 22px;
